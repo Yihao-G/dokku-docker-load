@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -eo pipefail
+[[ $DOKKU_TRACE ]] && set -x
+
+cd $(dirname "$0")
+rm -rf LICENSE README.md
+
+echo "installed docker load command plugin"
