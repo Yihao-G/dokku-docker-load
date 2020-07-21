@@ -2,6 +2,13 @@
 set -eo pipefail
 [[ $DOKKU_TRACE ]] && set -x
 
+if [[ "$1" == "help" ]]; then
+  cat<<help_content
+    docker load, Load an image from a tar archive or STDIN
+help_content
+  exit 0
+fi
+
 case "$1 $2" in
   "docker load")
     docker load "${@:3}"
